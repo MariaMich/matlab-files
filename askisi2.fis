@@ -1,0 +1,49 @@
+[System]
+Name='askisi2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='sfalma_therm'
+Range=[0 1]
+NumMFs=3
+MF1='mikro':'trimf',[-0.4 0 0.4]
+MF2='mesaio':'trimf',[0.1 0.5 0.9]
+MF3='megalo':'trimf',[0.6 1 1.4]
+
+[Input2]
+Name='sfalma_rohs'
+Range=[0 1]
+NumMFs=3
+MF1='mikro':'trimf',[-0.4 0 0.4]
+MF2='mesaio':'trimf',[0.1 0.5 0.9]
+MF3='megalo':'trimf',[0.6 1 1.4]
+
+[Output1]
+Name='kryo'
+Range=[0 1]
+NumMFs=3
+MF1='mikro':'trimf',[-0.4 0 0.4]
+MF2='mesaio':'trimf',[0.102645502645503 0.502645502645503 0.902645502645503]
+MF3='megalo':'trimf',[0.594708994708995 0.994708994708995 1.39470899470899]
+
+[Output2]
+Name='zesto'
+Range=[0 1]
+NumMFs=3
+MF1='mikro':'trimf',[-0.4 0 0.4]
+MF2='mesaio':'trimf',[0.1 0.5 0.9]
+MF3='megalo':'trimf',[0.6 1 1.4]
+
+[Rules]
+1 1, 2 2 (1) : 1
+3 1, 3 1 (1) : 1
+3 1, 1 3 (1) : 1

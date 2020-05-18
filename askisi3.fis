@@ -1,0 +1,43 @@
+[System]
+Name='askisi3'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='kokkina'
+Range=[0 20]
+NumMFs=3
+MF1='liga':'trimf',[1 4.26 7.96296296296296]
+MF2='mesaia':'trimf',[8.02 10.7 13.9417989417989]
+MF3='polla':'trimf',[13.8412698412698 15.9412698412698 19.8412698412698]
+
+[Input2]
+Name='prasina'
+Range=[0 20]
+NumMFs=3
+MF1='liga':'trimf',[0.519 3.04232804232804 6.06]
+MF2='mesaia':'trimf',[2 10 18]
+MF3='polla':'trimf',[12 20 28]
+
+[Output1]
+Name='xronos'
+Range=[10 40]
+NumMFs=3
+MF1='mikros':'trimf',[-2 10 22]
+MF2='mesaios':'trimf',[13 25 37]
+MF3='megalos':'trimf',[28 40 52]
+
+[Rules]
+1 3, 3 (1) : 1
+3 1, 1 (1) : 1
+3 3, 3 (1) : 1
+3 3, 3 (0) : 1
+3 3, 3 (1) : 1
